@@ -1,0 +1,11 @@
+var voltage_raw = msg.payload;
+
+var voltage = voltage_raw/1000;
+
+var temperatureC = -66.875 + 218.75 * (voltage/5);
+msg.payload = {
+
+	"temp" : temperatureC
+}
+
+return msg;

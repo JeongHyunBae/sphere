@@ -1,0 +1,11 @@
+var voltage_raw = msg.payload;
+
+var voltage = voltage_raw/1000;
+
+var light = -57 + 10 * voltage;
+msg.payload = {
+
+	"Light" : light
+}
+
+return msg;
